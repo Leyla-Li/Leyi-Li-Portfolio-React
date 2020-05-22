@@ -32,7 +32,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>Hello there</div>
+      <Router>
+         <Container fluid={true}>
+           <p>
+             Hello there
+           </p>
+         </Container>
+      </Router>
     );
   }
 }
