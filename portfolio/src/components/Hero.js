@@ -6,7 +6,15 @@ import Col from 'react-bootstrap/Col';
 
 function Hero(props){
   return(
-    <p>This is hero</p>
+    <Jumbotron>
+      <Container>
+        <Row>
+          <Col>
+            <h2>Leyi Li</h2>  
+          </Col>
+        </Row>
+      </Container>
+    </Jumbotron>
   );
 }
 
