@@ -14,7 +14,7 @@ class App extends React.Component {
       headerLinks: [
         {title: 'Home', path: '/'},
         {title: 'About', path: '/about'},
-        {title: 'Contacct', path: '/contact'},
+        {title: 'Contact', path: '/contact'},
       ],
       home: {
         title: 'Build an inclusive world',
@@ -33,10 +33,18 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-         <Container fluid={true}>
-           <p>
-             Hello there
-           </p>
+         <Container className="p-0" fluid={true}>
+            <Navbar className="border-bottom">
+              <Navbar.Brand>Leyi Li</Navbar.Brand>
+              <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
+              <Navbar.Collapse id="navbar-toggle">
+                <Nav className="ml-auto">
+                  <Link className="nav-link" to="/">Home</Link>
+                  <Link className="nav-link" to="/about">About</Link>
+                  <Link className="nav-link" to="/contact">Contact</Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
          </Container>
       </Router>
     );
