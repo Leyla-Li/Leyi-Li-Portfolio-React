@@ -46,7 +46,7 @@ class App extends React.Component {
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
-            
+
          </Container>
       </Router>
     );
