@@ -34,7 +34,8 @@ class App extends React.Component {
     return (
       <Router>
          <Container className="p-0" fluid={true}>
-            <Navbar className="border-bottom">
+
+            <Navbar className="border-bottom" bg="transparent" expand="lg">
               <Navbar.Brand>Leyi Li</Navbar.Brand>
               <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
               <Navbar.Collapse id="navbar-toggle">
@@ -45,6 +46,7 @@ class App extends React.Component {
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
+            
          </Container>
       </Router>
     );
