@@ -30,9 +30,11 @@ class App extends React.Component {
     };
   }
 
-  return (
-    
-  );
+  render() {
+    return (
+      <div>Hello there</div>
+    );
+  }
 }
 
 export default App;
