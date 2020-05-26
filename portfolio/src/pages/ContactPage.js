@@ -1,10 +1,23 @@
 import React from 'react';
 
-function HomePage(props){
+class ConatactPage extends React.Component{
 
-  return(
-    <p>This is the contact page</p>
-  );
+  constructor(props){
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+      disabled: false,
+      emailSent: null
+    }
+  }
+
+  render(){
+    return(
+      <p>Here is the contact page</p>
+    );
+  }
 }
 
-export default HomePage;
+export default ConatactPage;
