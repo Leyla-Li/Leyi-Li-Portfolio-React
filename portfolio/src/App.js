@@ -27,7 +27,21 @@ class App extends React.Component {
         text: 'This is my personal goal and philosophy.'
       },
       about: {
-        title: 'About Me'
+        title: 'About Me',
+        experience: [
+          {title: 'Preschool Teacher Assistance',
+          location: 'Denise Louie Education Center | Seattle, WA, USA',
+          description: 'Organize classroom environment, Create lesson plans',
+          type: 'work'},
+          {title: 'Master\'s Degree',
+          location: 'University of Sussex | Brighton, United Kingdom',
+          description: 'Major in International Education and Development',
+          type: 'education'},
+          {title: 'Bachelor\'s Degree',
+          location: 'Shenzhen University | Shenzhen, China',
+          description: 'Major in Biology',
+          type: 'education'},
+        ]
       },
       contact: {
         title: 'Let\'s Talk'
