@@ -1,9 +1,12 @@
 import React from 'react';
+import Title from '../components/Title';
 
 function HomePage(props){
 
   return(
-    <p>This is the about page</p>
+    <div>
+      <Title title={props.title}/>
+    </div>
   );
 }
 
