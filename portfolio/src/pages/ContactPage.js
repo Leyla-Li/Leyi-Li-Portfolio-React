@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from '../components/Title';
 
 class ConatactPage extends React.Component{
 
@@ -15,7 +16,7 @@ class ConatactPage extends React.Component{
 
   render(){
     return(
-      <p>Here is the contact page</p>
+      <Title title={this.props.title} />
     );
   }
 }
