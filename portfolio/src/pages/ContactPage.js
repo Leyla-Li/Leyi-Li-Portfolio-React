@@ -23,13 +23,32 @@ class ConatactPage extends React.Component{
     this.setState({[event.target.name]: event.target.value});
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({disabled: true});
+
+    Axios.post('http://localhost:3030/api/email', this.state)
+      .then(res => {
+        if(res.data.success){
+          this.setState({disabled: false, emailSent: true});
+        }else{
+          this.setState({disabled: false, emailSent: false});
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        this.setState({disabled: false, emailSent: false});
+      })
+  }
+
   render(){
     return(
       <div>
         <Title title={this.props.title} />
 
         <ContactContent>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
             <Form.Group>
               <Form.Label htmlFor="full-name">Full Name</Form.Label>
               <Form.Control id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
