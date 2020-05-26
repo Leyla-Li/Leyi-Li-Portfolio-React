@@ -41,6 +41,12 @@ class ConatactPage extends React.Component{
               <Form.Control id="message" name="message" as="textarea" rows="3" value={this.state.message} />
             </Form.Group>
 
+            <Button className="d-inline-block" variant="primary" type="submit" disabled={this.state.disabled}>
+              Send
+            </Button>
+
+            {this.state.emailSent ? <p className="d-inline success-msg">Email Sent</p> : <p className="d-inline err-msg">Email Not Sent</p>} 
+
           </Form>
         </ContactContent>
       </div>
