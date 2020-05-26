@@ -10,36 +10,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Content(props){
   return(
   <VerticalTimeline>
+    
     {props.experience.map((item) => {
       return (<VerticalTimelineElement
       className="vertical-timeline-element--work"
-      contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-      date="2011 - present"
-      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-      icon={<FontAwesomeIcon icon={faBriefcase} size="lg" />}
+      contentStyle={{ background: 'rgb(255,215,108)', color: '#A6A6A5' }}
+      contentArrowStyle={{ borderRight: '7px solid  #A6A6A5' }}
+      date={item.date}
+      iconStyle={{ background: 'rgb(255,215,108)', color: '#fff' }}
+      icon={item.type === 'work' ? <FontAwesomeIcon icon={faBriefcase} size="lg" /> : <FontAwesomeIcon icon={faGraduationCap} size="lg" />}
     >
-      <h3 className="vertical-timeline-element-title">Creative Director</h3>
-      <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+      <h3 className="vertical-timeline-element-title">{item.title}</h3>
+      <h4 className="vertical-timeline-element-subtitle">{item.location}</h4>
       <p>
-        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+      {item.description}
       </p>
     </VerticalTimelineElement>);
     })}
-    {/* <VerticalTimelineElement
-      className="vertical-timeline-element--work"
-      contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-      date="2011 - present"
-      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-      icon={<FontAwesomeIcon icon={faBriefcase} size="lg" />}
-    >
-      <h3 className="vertical-timeline-element-title">Creative Director</h3>
-      <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-      <p>
-        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-      </p>
-    </VerticalTimelineElement> */}
+    
   </VerticalTimeline>
   );
 }
