@@ -7,7 +7,7 @@ function AboutPage(props){
   return(
     <div>
       <Title title={props.title}/>
-      <Content />
+      <Content experience={props.experience} />
     </div>
   );
 }
