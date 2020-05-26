@@ -27,7 +27,24 @@ class App extends React.Component {
         text: 'This is my personal goal and philosophy.'
       },
       about: {
-        title: 'About Me'
+        title: 'About Me',
+        experience: [
+          {title: 'Preschool Teacher Assistance',
+          location: 'Denise Louie Education Center | Seattle, WA, USA',
+          description: 'Organize classroom environment, Create lesson plans',
+          date:"2018 - 2019",
+          type: 'work'},
+          {title: 'Master\'s Degree',
+          location: 'University of Sussex | Brighton, United Kingdom',
+          description: 'Major in International Education and Development',
+          date:"2017 - 2018",
+          type: 'education'},
+          {title: 'Bachelor\'s Degree',
+          location: 'Shenzhen University | Shenzhen, China',
+          description: 'Major in Biology',
+          date:"2012 - 2016",
+          type: 'education'},
+        ]
       },
       contact: {
         title: 'Let\'s Talk'
@@ -55,7 +72,7 @@ class App extends React.Component {
             </Navbar>
 
             <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} />} />
-            <Route path="/about" render={() => <AboutPage title={this.state.about.title} />} />
+            <Route path="/about" render={() => <AboutPage title={this.state.about.title} experience={this.state.about.experience} />} />
             <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} />
 
             <Footer />
