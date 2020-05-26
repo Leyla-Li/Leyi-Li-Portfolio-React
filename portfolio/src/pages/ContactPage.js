@@ -30,15 +30,25 @@ class ConatactPage extends React.Component{
 
     Axios.post('http://localhost:3030/api/email', this.state)
       .then(res => {
-        if(res.data.success){
-          this.setState({disabled: false, emailSent: true});
-        }else{
-          this.setState({disabled: false, emailSent: false});
-        }
+          if(res.data.success) {
+              this.setState({
+                  disabled: false,
+                  emailSent: true
+              });
+          } else {
+              this.setState({
+                  disabled: false,
+                  emailSent: false
+              });
+          }
       })
       .catch(err => {
-        console.log(err);
-        this.setState({disabled: false, emailSent: false});
+          console.log(err);
+
+          this.setState({
+              disabled: false,
+              emailSent: false
+          });
       })
   }
 
@@ -68,8 +78,9 @@ class ConatactPage extends React.Component{
               Send
             </Button>
 
-            {this.state.emailSent ? <p className="d-inline success-msg">Email Sent</p> : <p className="d-inline err-msg">Email Not Sent</p>} 
-
+            {/* {this.state.emailSent ? <p className="d-inline success-msg">Email Sent</p> : <p className="d-inline err-msg">Email Not Sent</p>}  */}
+            {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
+            {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
           </Form>
         </ContactContent>
       </div>
